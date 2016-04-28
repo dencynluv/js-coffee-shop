@@ -47,8 +47,15 @@
 
     // Set these variables to their DOM elements
 
-    var myImage;
-    var myRevenueMessage;
+    // set variable myImage to get grab the image by its id tag
+    var myImage = document.getElementById("coffee-image");
+
+    // resetting the source attribute to the path where the image lives
+    myImage.setAttribute('src', 'static/coffee_beans.jpg');
+
+    // set variable myRevenueMessage to get grab the revenue messge by its id tag
+    var myRevenueMessage = document.getElementById("revenue");
+
 
     // use this JavaScript object in further study step
 
@@ -58,6 +65,14 @@
         "latte": 4.15,
         "hot chocolate": 2.50
     };
+
+    // made function called makeCoffee 
+    var makeCoffee = function() {
+        // changes source attribute to new path where new image lives
+        myImage.setAttribute('src', 'static/coffee_mug.jpg');
+    };
+    // adding event listener to click. When image is click it will change to the new image
+    myImage.addEventListener('click', makeCoffee);
 
 
 </script>
