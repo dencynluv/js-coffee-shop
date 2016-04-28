@@ -66,12 +66,26 @@
         "hot chocolate": 2.50
     };
 
-    // made function called makeCoffee 
+    // made function called makeCoffee that when user clicks image the image will change and in a certain amount of miliseconds will display another image, then back to the previous image we started with 
     var makeCoffee = function() {
+
+        // this image is called 1st when user clicks
         // changes source attribute to new path where new image lives
-        myImage.setAttribute('src', 'static/coffee_mug.jpg');
+        myImage.setAttribute('src', 'static/coffee_machine.jpg');
+
+        // this function displays the new image coffee_mug after 1000ms(1 second)
+        setTimeout(function () {
+            // changes source attribute to new path where new image lives
+            myImage.setAttribute('src', 'static/coffee_mug.jpg');
+        }, 1000);
+
+        // this function displays the image (coffee_beans) we started with before the user clicked after 1500ms(1.5 second)
+        setTimeout(function () {
+            myImage.setAttribute('src', 'static/coffee_beans.jpg');
+        }, 1500);
     };
-    // adding event listener to click. When image is click it will change to the new image
+
+    // calling function and adding event listener to 'click'. When image is click it will change to the new image
     myImage.addEventListener('click', makeCoffee);
 
 
